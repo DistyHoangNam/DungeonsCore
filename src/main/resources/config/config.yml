@@ -1,0 +1,150 @@
+# ============================================================
+#  DungeonsCore Configuration
+#  Plugin Phó Bản (Dungeon Instance) cho Minecraft Spigot/Paper
+#  Yêu cầu: Spigot/Paper 1.21.1+, Java 17+, MythicMobs
+# ============================================================
+#
+#  Placeholders (PlaceholderAPI):
+#    %phobanpro_prefix%              - Tên phó bản hiện tại
+#    %phobanpro_time%                - Thời gian còn lại
+#    %phobanpro_minplayers%          - Số người chơi hiện tại
+#    %phobanpro_maxplayers%          - Số người chơi tối đa
+#    %phobanpro_point%               - Điểm phó bản của bạn
+#    %phobanpro_point_<player>%      - Điểm của người chơi chỉ định
+#    %phobanpro_rank%                - Xếp hạng của bạn
+#    %phobanpro_rank_<player>%       - Xếp hạng người chơi chỉ định
+#    %phobanpro_<room>_time%         - Thời gian phòng chỉ định
+#    %phobanpro_<room>_status%       - Trạng thái phòng chỉ định
+#    %phobanpro_turn-left%           - Số đợt quái còn lại
+#    %phobanpro_life%                - Số lượt hồi sinh còn lại
+#    %phobanpro_top_<pos>%           - Top xếp hạng tại vị trí
+#    %phobanpro_top_<pos>_name%      - Tên người chơi ở top chỉ định
+#    %phobanpro_top_<pos>_point%     - Điểm của top chỉ định
+#    %phobanpro_top_<pos>_score%     - Alias của _point
+#    %phobanpro_top_<pos>_uuid%      - UUID được lưu của top chỉ định
+#    %phobanpro_top_<pos>_<format>%  - Top có format tùy chỉnh
+#
+#  Quyền theo phòng (trong từng file room/<tên>.yml):
+#    Permission: "phoban.join.<tên>"   # Nếu có: chỉ player có perm mới vào được
+#    NoPermissionMessage: "&c..."      # Message từ chối (tùy chọn), dùng <room> thay tên phòng
+#
+
+Debug: off
+
+# Free vé theo chu kỳ khi đang online (timer reset mỗi lần vào lại server).
+# time: 30s, 5m, 1h, 12h, 1d | amount: số lượt mỗi lần | immediate: true = nhận ngay rồi lặp theo chu kỳ
+# message: tùy chọn, placeholder <id> <type> <amount> - không ghi thì dùng lang/message.yml (FreeVoucherReceived)
+FreeVoucher:
+  cathangtu:
+    type: default
+    time: 1h
+    amount: 1
+    enable: true
+    immediate: false
+
+# -----------------------------------------------
+#  Cài đặt chung
+# -----------------------------------------------
+Settings:
+  # Lệnh regex cho phép dùng khi trong phó bản
+  CommandWhitelist:
+    - "menu"
+    - "feed"
+    - "heal"
+    - "msg"
+    - "shop"
+    - "fix"
+    - "fix all"
+    - "spawn"
+
+  # Thời gian countdown (giây)
+  StartCountdown: 15        # Countdown khi bắt đầu phó bản
+  StageCountdown: 15        # Countdown giữa các đợt quái
+  QuitCountdown: 5          # Countdown khi hoàn thành, tự rời
+
+  # Title nhắc chủ phòng bắt đầu khi đang ở phòng chờ
+  WaitingStartWarning:
+    Enable: true
+    Interval: 5              # Lặp lại sau mỗi bao nhiêu giây
+    LeaderOnly: true         # true = chỉ nhắc chủ phòng, false = nhắc tất cả người trong phòng chờ
+    Title: "<#FF5555>&lPHÒNG CHỜ"
+    Subtitle: "<#FFFFFF>Gõ <#00FF88>/phoban start <#FFFFFF>để bắt đầu"
+
+  SpawnRadius: 2            # Bán kính spawn quái quanh điểm spawn
+
+  # Lượt chơi
+  DefaultTurn: 1            # Số lượt tham gia mặc định
+  AutoReset: day            # day = reset mỗi ngày | hour = cấp lượt mỗi giờ
+
+  # Alias lệnh bổ sung
+  CommandAliases:
+    - "pbp"
+    - "pb"
+
+  # Phần thưởng command chung cho toàn bộ người chơi khi hoàn tất
+  RewardCommand:
+    - "eco give <player> 5000"
+
+  TeleportNewStage: false   # Tự động dịch chuyển lại vị trí khi qua đợt mới
+
+  # Hồi sinh và bảo vệ lúc vào chiến
+  RespawnProtect: 3         # Thời gian bảo vệ sau hồi sinh (giây)
+  EntryProtect: 5           # Bảo vệ người chơi khi vừa vào chiến (giây)
+  EntrySpawnDelay: 3        # Delay spawn đợt quái đầu để plugin stat/armor cập nhật (giây)
+  Respawn:
+    Enable: true
+    Amount: 2               # Số lượt hồi sinh (hoặc perm phoban.respawn.<n>)
+    Countdown: 3            # Countdown khi hồi sinh (giây)
+
+  Checkpoint: true          # Hồi sinh tại vị trí chết thay vì spawn
+
+  MobSpawnDelay: 2          # Delay giữa mỗi mob spawn (giây)
+  AutoClearMissingMobs: true # Legacy option; missing/despawned tracked mobs are respawned, not counted as cleared
+  DebugStageProgress: false # Log spawn/clear stage progress details to console
+  DebugWaitingRoom: false   # Log join/start/leave/warmup phòng chờ
+  AutoStartSingle: false    # Tự bắt đầu khi 1 người vào
+  WaitingKick: 600          # Kick sau bao lâu nếu không start (giây)
+
+  # Hiệu ứng phát sáng mob
+  MobStartGlow: true        # Con quái đầu tiên mỗi đợt phát sáng
+  StartGlowFade: 15         # Tắt phát sáng sau (giây), 0 = vĩnh viễn
+  MobEndingGlow: 15         # Phát sáng 1 con quái khi gần hết thời gian (giây)
+
+
+# -----------------------------------------------
+#  Âm thanh
+#  Danh sách: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+# -----------------------------------------------
+Sound:
+  TurnStart: "ENTITY_ENDER_DRAGON_AMBIENT"
+
+
+# -----------------------------------------------
+#  Hiệu ứng hạt
+#  Danh sách: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+#  Format: <particle> <offsetX> <offsetY> <offsetZ> <speed> <count> [force/normal]
+# -----------------------------------------------
+Particle:
+  TurnStart: "CLOUD 0.3 1 0.3 0 8 normal"
+  NextTurn: "FLAME"
+
+
+# -----------------------------------------------
+#  Hệ thống điểm
+# -----------------------------------------------
+Point:
+  AllowNegative: false      # Cho phép điểm xuống âm
+  Win: "10:30"              # Random 10-30 điểm khi thắng
+  Lose: "1:30"              # Trừ 1-30 điểm khi thua
+  Death: "1:10"             # Trừ 1-10 điểm mỗi lần chết
+
+
+# -----------------------------------------------
+#  Phòng chờ Boss
+# -----------------------------------------------
+WaitingRoom:
+  JoinMessage: "&a&lBạn đã vào phòng chờ. Phó bản sẽ bắt đầu khi người lãnh đạo sẵn sàng."
+  BossRoomLockedMessage: "&c&lKhu vực boss đã bị khóa."
+  BossRoomUnlockedMessage: "&a&lKhu vực boss đã mở."
+  BossRoomCooldownMessage: "&c&lBạn cần đợi thêm &f<time> &c&lphút."
+  BossRespawnTime: 15       # Thời gian cooldown boss (phút)

@@ -1,0 +1,3 @@
+rootProject.name = 'DungeonsCore'
+include 'compat-api'
+include 'compat-modern'

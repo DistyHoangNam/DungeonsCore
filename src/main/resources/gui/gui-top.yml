@@ -1,0 +1,41 @@
+# ============================================================
+#  DungeonsCore - Bảng Xếp Hạng GUI
+#  Cấu hình giao diện bảng xếp hạng điểm phó bản
+# ============================================================
+
+Title: "&lBẢNG XẾP HẠNG PHÓ BẢN"
+Rows: 5
+
+TopSlot: [14, 22, 23, 24, 30, 31, 32, 33, 34]
+MyTopSlot: 19
+
+TopFormat:
+  ID: PLAYER_HEAD
+  Name: "&e&l#<top>. &f&n<player>"
+  Lore:
+    - ""
+    - " &7Điểm phó bản: &c&l<point> ⚒"
+    - ""
+    - "&7&oTham gia phó bản và hoàn"
+    - "&7&othành nó để có được điểm!"
+
+MyTopFormat:
+  ID: OAK_SIGN
+  Name: "&e&lNgười chơi: &f&n<player>"
+  Lore:
+    - ""
+    - " &7Vị trí xếp hạng: &a&l#<top>"
+    - ""
+    - " &7Điểm phó bản: &c&l<point> ⚒"
+    - ""
+    - "&7&oThông tin điểm phó bản của bạn"
+
+Content:
+  blank1:
+    ID: WHITE_STAINED_GLASS_PANE
+    Name: "&r"
+    Slot: [0, 8, 36, 44]
+  blank2:
+    ID: BLACK_STAINED_GLASS_PANE
+    Name: "&r"
+    Slot: [1,2,3,4,5,6,7,9,10,11,17,18,20,26,27,28,29,35,37,38,39,40,41,42,43]

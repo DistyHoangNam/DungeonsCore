@@ -1,0 +1,257 @@
+# ============================================================
+#  DungeonsCore - Messages Configuration
+#  Tất cả tin nhắn hiển thị trong game
+#  Hỗ trợ color codes: &a-&f, &0-&9, &l, &o, &n, &m, &k, &r
+#  Hỗ trợ RGB colors: <#RRGGBB> (ví dụ: <#FF5555> đỏ, <#55FF55> xanh lá)
+# ============================================================
+
+# -----------------------------------------------
+#  Free vé online (config: FreeVoucher) — <id> <type> <amount>
+# -----------------------------------------------
+FreeVoucherReceived: "<#00FF88>&l+ <#FFFFFF>Nhận &e<amount> &flượt phó bản loại &e<type> &7(&f<id>&7)"
+CannotJoinLobbyWhilePlaying: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Bạn đang trong phó bản (đang chơi / đếm giờ). Dùng <#FFFFFF>/phoban leave <#FF5555>trước khi vào phòng khác."
+
+# -----------------------------------------------
+#  Setup / Editor Messages
+# -----------------------------------------------
+EditPlayer: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập số lượng người chơi muốn đặt <#AAAAAA>&o(Chat cancel để huỷ)"
+EditPrefix: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập tên hiển thị cho phòng chơi <#AAAAAA>&o(Chat cancel để huỷ)"
+EditTime: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập thời gian kết thúc phó bản (phút) <#AAAAAA>&o(Chat cancel để huỷ)"
+EditType: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập TYPE (id vé / lượt) — trùng TYPE = chung vé <#AAAAAA>&o(Chat cancel để huỷ)"
+EditDisplay: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập tên hiển thị (Display) cho GUI — &7clear &8hoặc &7- &8để xoá <#AAAAAA>&o(Chat cancel để huỷ)"
+EditChance: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Hãy nhập tỉ lệ thưởng cho món đồ này"
+EditRewardAmount: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập số lượng phần thưởng mà người chơi nhận được"
+
+EditMob_Step1: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Chọn vị trí <#FFD700>Mob Spawn <#FFFFFF>bằng cách đập vào vị trí đó với <#FF8800>Blaze Rod"
+EditMob_Step2: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Hãy nhập vào khung Chat: <#00FF88>add<#FFFFFF>, <#00FF88>exit"
+EditMob_Step3: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập tên quái <#FFD700>(MythicMobs) <#FFFFFF>muốn Spawn"
+EditMob_Step4: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập số lượng quái mà bạn muốn Spawn"
+EditMob_Step5: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập thời gian cho đợt này (tính bằng phút)"
+
+EditBoss_Step1: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Chọn vị trí <#FF5555>&lBOSS Spawn <#FFFFFF>bằng cách đập vào vị trí đó với <#FF8800>Blaze Rod"
+EditBoss_Step2: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Hãy nhập vào khung Chat: <#00FF88>add<#FFFFFF>, <#00FF88>exit"
+EditBoss_Step3: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập tên BOSS <#FF5555>(MythicMobs) <#FFFFFF>muốn Spawn"
+EditBoss_Step4: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập số lượng BOSS mà bạn muốn Spawn"
+EditBoss_Step5: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập thời gian cho đợt này (tính bằng phút)"
+
+AddNewMob: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Hãy thực hiện chọn vị trí Spawn nếu bạn vẫn muốn thêm <#AAAAAA>&o(Chat complete để hoàn tất)"
+AddRewardCommand: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Nhập câu lệnh muốn thêm, <#FF5555>không cần dấu <#FFD700>/<#FFFFFF>, chỉ định người chơi bằng <#FFD700><player>"
+AddRewardCommandSuccess: "<#00FF88>&lThêm phần thưởng thành công<#FFFFFF>, dùng /addrewards để thêm tiếp hoặc /complete để hoàn tất"
+
+# Kiểm tra phòng (/phoban check <tên>) — đồng bộ điều kiện với JoinRoomNotConfig / canJoin
+RoomSetupCheck:
+  Usage: "<#2A2A2A>[<#FF5555>&l!<#2A2A2A>] <#FF5555>Sử dụng: <#FFFFFF>/phoban check <tên_phòng>"
+  Header: "<#00D4FF>[<#00FF88>&lSetup<#00D4FF>] <#FFFFFF>Phòng <#FFD700><room><#FFFFFF> — các mục chưa đủ (tối thiểu để mở cho người chơi):"
+  AllOk: "<#00FF88>&l✔ <#FFFFFF>Phòng <#FFD700><room><#FFFFFF> đã đủ điều kiện cấu hình tối thiểu — người chơi có thể vào (nếu đã reload / load phòng)."
+  EditHint: "<#AAAAAA>&oHoàn tất chỉnh sửa các mục trên trong GUI, sau đó bấm lại <#FFFFFF>Hoàn tất chỉnh sửa <#AAAAAA>&o— hoặc dùng <#FFFFFF>/phoban check <tên_phòng> <#AAAAAA>&ođể xem lại."
+RoomSetupMissing:
+  Invalid: "<#FF5555>• <#FFFFFF>Không đọc được dữ liệu phòng."
+  Prefix: "<#FF5555>• Chưa có <#FFFFFF>Prefix<#FF5555> (tên hiển thị / prefix phòng)"
+  Player: "<#FF5555>• Chưa có <#FFFFFF>Player<#FF5555> (số người chơi tối đa trong YAML)"
+  Time: "<#FF5555>• Chưa có <#FFFFFF>Time<#FF5555> (thời gian cả phó bản — phút)"
+  Reward: "<#FF5555>• Chưa có mục <#FFFFFF>Reward<#FF5555> (cần ít nhất phần thưởng trong GUI hoặc YAML)"
+  RewardAmount: "<#FF5555>• Chưa có <#FFFFFF>RewardAmount<#FF5555> (số phần thưởng random khi hoàn thành)"
+  Spawn: "<#FF5555>• Chưa có <#FFFFFF>Spawn<#FF5555> (điểm spawn trong map phó bản)"
+  Type: "<#FF5555>• Chưa có <#FFFFFF>Type<#FF5555> (loại phó bản — dùng cho GUI / lượt)"
+  MobOrBoss: "<#FF5555>• Chưa có <#FFFFFF>ít nhất một ải Mob (Mob1…) hoặc Boss<#FF5555> trong cấu hình"
+
+
+# -----------------------------------------------
+#  Success Messages
+# -----------------------------------------------
+RemoveMob: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#00FF88>Bạn đã xóa Mob thành công"
+DeleteRoom: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#00FF88>Bạn đã xoá phòng chơi thành công"
+ConfigDone: "<#00FF88>&lDONE! <#00FF88>Chỉnh sửa phó bản thành công"
+GlobalSpawnSet: "<#00FF88>&lSet spawn thành công"
+GiveTurn: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#FFFFFF>Bạn đã thêm <#00FF88><amount> lượt <#FFFFFF>phó bản cho <#55AAFF><player>"
+RemoveTurn: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#FFFFFF>Bạn đã trừ <#FF5555><amount> lượt <#FFFFFF>phó bản <#FFD700><type> <#FFFFFF>của <#55AAFF><player>"
+GiveTurnAll: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#00FF88>Bạn đã cấp lượt chơi mới cho toàn bộ người chơi"
+GivePoint: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#FFFFFF>Bạn đã thêm <#00FF88>&l<amount> <#FFFFFF>điểm phó bản cho <#55AAFF><player>"
+TakePoint: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#FFFFFF>Bạn đã lấy đi <#FF5555>&l<amount> <#FFFFFF>điểm phó bản của <#55AAFF><player>"
+
+
+# -----------------------------------------------
+#  Error Messages
+# -----------------------------------------------
+NotInt: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Bạn cần phải nhập vào đây một con số"
+NotPlayer: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Bạn không phải là người chơi"
+NoPermissions: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Bạn không có quyền làm điều này!"
+Error: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Đã xảy ra lỗi: <#FF8888><error>"
+RoomExist: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Phòng này đã tồn tại, hãy thử lại"
+RoomNotExist: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Phòng này không tồn tại, hãy kiểm tra và thử lại"
+NotOnline: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Người chơi này hiện tại không Online"
+RoomStarted: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Phòng đang chuẩn bị hoặc đã bắt đầu"
+RoomFull: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Phòng chơi này đã đầy rồi!"
+RoomNotConfig: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Vui lòng hoàn tất quá trình tuỳ chỉnh phòng"
+JoinRoomNotConfig: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Phòng này Admin chưa cài đặt xong, không thể vào!"
+NoTurn: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Bạn không có lượt để tham gia phó bản này!"
+NoRoomPermission: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Bạn không có quyền vào phòng <#FFD700><room><#FF5555>!"
+RoomDailyTicketLimit: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Phòng <#FFD700><room> <#FF5555>đã hết lượt vào hôm nay <#FFFFFF>(<used>/<max>)<#FF5555>, quay lại sau <#FFFFFF><reset><#FF5555>."
+NoCommand: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Không thể sử dụng lệnh khi đang trong phó bản"
+
+
+# -----------------------------------------------
+#  Game Events
+# -----------------------------------------------
+PlayerJoin: "<#2A2A2A>[<#00FF88>&l+<#2A2A2A>] <#FFFFFF>Người chơi <#55AAFF><player> <#FFFFFF>đã vào phó bản <#FFD700>(<joined>/<max>)"
+PlayerQuit: "<#2A2A2A>[<#FF5555>&l-<#2A2A2A>] <#FFFFFF>Người chơi <#FF8888><player> <#FFFFFF>đã rời phó bản <#FFD700>(<joined>/<max>)"
+Complete: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#00FF88>&lHOÀN THÀNH PHÓ BẢN"
+BroadcastComplete: "<#FF5555>&l⚒ <#FFFFFF>Người chơi <#FFD700><player> <#FFFFFF>đã hoàn thành phó bản <#FFFFFF><prefix>"
+
+LeaderStart: "<#FFFFFF>Bạn có thể bắt đầu bằng lệnh <#00FF88>&l/phoban start <#FFFFFF>hoặc đợi đến khi đủ người"
+LeaveOnJoin: "<#FFFFFF>Sử dụng <#FF5555>&l/phoban leave <#FFFFFF>để thoát phó bản"
+TimeOut: "<#2A2A2A>[<#FF5555>&l✘<#2A2A2A>] <#FF5555>Phó bản đã hết thời gian, bạn đã không hoàn thành được"
+MobsLeft: "<#AAAAAA>Quái phó bản: <#FFFFFF><name> <#FFFFFF>(<current>/<max>)"
+ListRoom: "<#FFFFFF>Danh sách phòng: <#00FF88>&l<rooms>"
+
+
+# -----------------------------------------------
+#  Điểm
+# -----------------------------------------------
+PointWin: "<#2A2A2A>[<#00FF88>&l✔<#2A2A2A>] <#FFFFFF>Bạn hoàn thành phó bản và được <#00FF88>&l+<point> điểm"
+PointDeath: "<#FF5555>&l☠ <#FF5555>Bạn đã chết và bị <#FF5555>&l-<point> điểm"
+PointLose: "<#FF5555>&l☠ <#FF5555>Bạn đã thua phó bản và bị <#FF5555>&l-<point> điểm"
+
+
+# -----------------------------------------------
+#  Hồi sinh
+# -----------------------------------------------
+Respawn: "<#FF5555>&l⚒ <#FFFFFF>Hồi sinh thành công, bạn chỉ còn <#00FF88>&l<amount> <#FFFFFF>lượt hồi sinh"
+NoMoreRespawn: "<#FF5555>&l⚒ HÃY CỐ GẮNG TRONG LẦN TIẾP THEO NHÉ!"
+Respawning:
+  Title: "<#FF5555>&lĐANG HỒI SINH..."
+  Subtitle: "<#FFFFFF>Tiếp tục chiến đấu sau <#FFD700><time>"
+
+
+# -----------------------------------------------
+#  Phòng chờ
+# -----------------------------------------------
+WaitingRoomSet: "<#00FF88>&lĐã đặt vị trí phòng chờ thành công!"
+BossWaitingRoomSet: "<#00FF88>&lĐã đặt vị trí khu vực chờ boss thành công!"
+NoWaitingRoom: "<#FF5555>&lPhòng chờ chưa được thiết lập. Sử dụng /phoban phongcho"
+NoBossWaitingRoom: "<#FF5555>&lKhu vực chờ boss chưa thiết lập. Sử dụng /phoban bosswait"
+
+
+# -----------------------------------------------
+#  Countdown Titles - Bắt đầu phó bản
+# -----------------------------------------------
+StartCountdown:
+  15:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Phó bản sẽ bắt đầu sau <#FFD700>&l15s"
+  5:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Phó bản sẽ bắt đầu sau <#FFD700>&l5"
+  4:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Phó bản sẽ bắt đầu sau <#FFD700>&l4"
+  3:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Phó bản sẽ bắt đầu sau <#FFD700>&l3"
+  2:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Phó bản sẽ bắt đầu sau <#FFD700>&l2"
+  1:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Phó bản sẽ bắt đầu sau <#FFD700>&l1"
+  0:
+    Title: "<#00FF88>&lBẮT ĐẦU"
+    Subtitle: "<#FFFFFF>Chiến thôi nào anh em ơi!"
+
+
+# -----------------------------------------------
+#  Countdown Titles - Đợt quái tiếp theo
+# -----------------------------------------------
+StageCountdown:
+  15:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Đợt quái tiếp theo sẽ xuất hiện sau <#FFD700>&l15s"
+  5:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Đợt quái tiếp theo sẽ xuất hiện sau <#FFD700>&l5"
+  4:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Đợt quái tiếp theo sẽ xuất hiện sau <#FFD700>&l4"
+  3:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Đợt quái tiếp theo sẽ xuất hiện sau <#FFD700>&l3"
+  2:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Đợt quái tiếp theo sẽ xuất hiện sau <#FFD700>&l2"
+  1:
+    Title: "<#FF5555>&l⚠ <#FF8800>WARNING <#FF5555>&l⚠"
+    Subtitle: "<#FFFFFF>Đợt quái tiếp theo sẽ xuất hiện sau <#FFD700>&l1"
+  0:
+    Title: "<#00FF88>&lCHIẾN"
+    Subtitle: "<#FFFFFF>Đợt quái đã xuất hiện"
+
+
+# -----------------------------------------------
+#  Cảnh báo thời gian còn lại
+# -----------------------------------------------
+TimeRemaining:
+  300: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#00FF88>5 phút"
+  240: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#00FF88>4 phút"
+  180: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#00FF88>3 phút"
+  120: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#00FF88>2 phút"
+  60: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#00FF88>1 phút"
+  30: "<#FF8800>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#FFD700>30 giây"
+  15: "<#FF8800>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#FFD700>15 giây"
+  5: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#FF5555>5"
+  4: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#FF5555>4"
+  3: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#FF5555>3"
+  2: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#FF5555>2"
+  1: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Phó bản sẽ kết thúc sau <#FF5555>1"
+
+
+# -----------------------------------------------
+#  Cảnh báo thời gian đợt quái
+# -----------------------------------------------
+StageTime:
+  15: "<#FF8800>&l⚒ CHÚ Ý: <#FFFFFF>Đợt này sẽ kết thúc sau <#FFD700>15 giây"
+  5: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Đợt này sẽ kết thúc sau <#FF5555>5 giây"
+  4: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Đợt này sẽ kết thúc sau <#FF5555>4 giây"
+  3: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Đợt này sẽ kết thúc sau <#FF5555>3 giây"
+  2: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Đợt này sẽ kết thúc sau <#FF5555>2 giây"
+  1: "<#FF5555>&l⚒ CHÚ Ý: <#FFFFFF>Đợt này sẽ kết thúc sau <#FF5555>1 giây"
+
+
+# -----------------------------------------------
+#  Countdown khi rời phó bản
+# -----------------------------------------------
+QuitCountdown:
+  5: "<#FF8800>&l⚒ CHÚ Ý: <#FFFFFF>Bạn sẽ được dịch chuyển khỏi phó bản sau <#FFD700>5"
+  4: "<#FF8800>&l⚒ CHÚ Ý: <#FFFFFF>Bạn sẽ được dịch chuyển khỏi phó bản sau <#FFD700>4"
+  3: "<#FF8800>&l⚒ CHÚ Ý: <#FFFFFF>Bạn sẽ được dịch chuyển khỏi phó bản sau <#FFD700>3"
+  2: "<#FF8800>&l⚒ CHÚ Ý: <#FFFFFF>Bạn sẽ được dịch chuyển khỏi phó bản sau <#FFD700>2"
+  1: "<#FF8800>&l⚒ CHÚ Ý: <#FFFFFF>Bạn sẽ được dịch chuyển khỏi phó bản sau <#FFD700>1"
+
+
+# -----------------------------------------------
+#  Help - Hướng dẫn sử dụng
+# -----------------------------------------------
+Help:
+  - "<#00AA00>======== <#00FF88>Lệnh DungeonsCore <#00AA00>========"
+  - "<#FFFFFF>/phoban <#00FF88>- Mở GUI phó bản"
+  - "<#FFFFFF>/phoban start <#00FF88>- Bắt đầu phòng (chủ phòng)"
+  - "<#FFFFFF>/phoban join <tên> <#00FF88>- Tham gia phòng"
+  - "<#FFFFFF>/phoban leave <#00FF88>- Rời phòng"
+  - "<#FFFFFF>/phoban top <#00FF88>- Bảng xếp hạng"
+  - "<#FFFFFF>/phoban bossfight <#00FF88>- Bắt đầu trận boss"
+  - "<#FFFFFF>/phoban bossend <#00FF88>- Kết thúc trận boss"
+  - "<#00AA00>======== <#00FF88>Lệnh Admin <#00AA00>========"
+  - "<#FFFFFF>/phoban create <tên> <#00FF88>- Tạo phòng"
+  - "<#FFFFFF>/phoban edit <tên> <#00FF88>- Chỉnh sửa phòng"
+  - "<#FFFFFF>/phoban check <tên> <#00FF88>- Xem phòng còn thiếu gì để hoàn chỉnh"
+  - "<#FFFFFF>/phoban delete <tên> <#00FF88>- Xóa phòng"
+  - "<#FFFFFF>/phoban add <player> <type> <amount> <#00FF88>- Cấp lượt"
+  - "<#FFFFFF>/phoban add all <#00FF88>- Cấp lượt toàn bộ"
+  - "<#FFFFFF>/phoban remove <player> <type> <amount> <#00FF88>- Trừ lượt"
+  - "<#FFFFFF>/phoban setspawn <#00FF88>- Đặt spawn chung"
+  - "<#FFFFFF>/phoban phongcho <#00FF88>- Đặt phòng chờ chung"
+  - "<#FFFFFF>/phoban bosswait <tên> <#00FF88>- Đặt khu vực chờ boss"
+  - "<#FFFFFF>/phoban addrewards <tên> <#00FF88>- Thêm phần thưởng"
+  - "<#FFFFFF>/phoban givepoint <player> <amount> <#00FF88>- Thêm điểm"
+  - "<#FFFFFF>/phoban takepoint <player> <amount> <#00FF88>- Trừ điểm"
+  - "<#FFFFFF>/phoban list <#00FF88>- Danh sách phòng"
+  - "<#FFFFFF>/phoban reload <#00FF88>- Tải lại cấu hình"

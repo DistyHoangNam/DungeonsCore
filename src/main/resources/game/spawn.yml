@@ -1,0 +1,3 @@
+# DungeonsCore - Spawn Data
+# File này lưu trữ vị trí spawn và phòng chờ
+# Được quản lý tự động khi sử dụng /phoban setspawn, /phoban phongcho, /phoban bosswait

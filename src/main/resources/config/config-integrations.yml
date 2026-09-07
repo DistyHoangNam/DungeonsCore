@@ -1,0 +1,26 @@
+# ============================================================
+# DungeonsCore — Tích hợp plugin (MythicMobs, PlaceholderAPI, …)
+# Tach khoi config.yml de quan ly tung plugin tren server 1.21.1+.
+# Chỉ có hiệu lực khi plugin tương ứng được cài (softdepend).
+# ============================================================
+
+# MythicMobs (depend trong plugin.yml) - API Lumine 5.x khi build.
+Mythic:
+  # Đăng ký listener damage Mythic trong phó bản (MMListener)
+  RegisterDamageListener: true
+
+PlaceholderAPI:
+  # Đăng ký expansion %phobanpro_*%
+  RegisterExpansion: true
+
+# SkillAPI / ProSkillAPI — xử lý chết khi damage skill
+SkillAPI:
+  RegisterListener: true
+
+LuckPerms:
+  # Kết nối API LuckPerms nếu có (setupPermissions)
+  ConnectService: true
+
+FastAsyncWorldEdit:
+  # Dành cho tương lai / ghi chú — hiện plugin chưa hook trực tiếp
+  Enabled: false

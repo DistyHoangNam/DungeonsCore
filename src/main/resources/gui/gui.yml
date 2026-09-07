@@ -1,0 +1,542 @@
+# ============================================================
+#  DungeonsCore - GUI Configuration
+#  Cấu hình giao diện người dùng cho plugin
+#  Sử dụng Material ID theo Spigot 1.21+
+# ============================================================
+
+# -----------------------------------------------
+#  Editor GUI - Giao diện chỉnh sửa phòng phó bản
+# -----------------------------------------------
+EditorGui:
+  Title: "&lTuỳ Chỉnh Phó Bản | <name>"
+  Rows: 6
+
+  MobLoreFormat: " &7- &fx<amount> &e<mobs>"
+  SecondaryMobLoreFormat: "&fx<amount> &e<mobs>"
+
+  Content:
+    none:
+      ID: BLACK_STAINED_GLASS_PANE
+      Name: "&r"
+      Slot: [0,1,2,3,4,5,6,7,8,9,13,17,18,19,20,21,22,23,24,25,26,27,33,35,36,43,44,46,47,48,49,50,51,52]
+
+    editplayer:
+      ID: PLAYER_HEAD
+      Name: "&a&lNGƯỜI CHƠI THAM GIA"
+      Lore:
+        - ""
+        - " &fMax players: &e<max_players>"
+        - ""
+        - "&7&o(( Click vào đây để chỉnh sửa ))"
+      Slot: [10]
+      ClickType: EditPlayer
+
+    editprefix:
+      ID: NAME_TAG
+      Name: "&a&lTÊN PHÒNG CHƠI"
+      Lore:
+        - ""
+        - " &fPrefix: &e<prefix>"
+        - ""
+        - "&7&o(( Click vào đây để chỉnh sửa ))"
+      Slot: [12]
+      ClickType: EditPrefix
+
+    edittime:
+      ID: CLOCK
+      Name: "&a&lTHỜI GIAN KẾT THÚC"
+      Lore:
+        - ""
+        - " &fHiện đang để: &e<time> phút"
+        - ""
+        - "&7&o(( Click vào đây để chỉnh sửa ))"
+      Slot: [14]
+      ClickType: EditTime
+
+    editreward:
+      ID: CHEST
+      Name: "&a&lPHẦN THƯỞNG HOÀN THÀNH"
+      Lore:
+        - ""
+        - "&fKhi hoàn thành phó bản thì"
+        - "&ftất cả người chơi có tham gia"
+        - "&fsẽ nhận được phần thưởng"
+        - ""
+        - "&7&o(( Click vào đây để chỉnh sửa ))"
+      Slot: [15]
+      ClickType: EditReward
+
+    editspawn:
+      ID: RED_BED
+      Name: "&a&lTHIẾT LẬP VỊ TRÍ SPAWN"
+      Lore:
+        - ""
+        - "&fHiện tại: &e<spawn>"
+        - ""
+        - "&7Đây là vị trí mà người chơi khi"
+        - "&7vào phó bản sẽ được dịch chuyển"
+        - ""
+        - "&7&o(( Click vào đây để thiết lập ))"
+        - "&6Lấy vị trí của bạn đang đứng"
+      Slot: [11]
+      ClickType: EditSpawn
+
+    edittype:
+      ID: NETHER_STAR
+      Name: "&a&lTYPE (ID VÉ / LƯỢT)"
+      Lore:
+        - ""
+        - "&fType (vé): &e<type>"
+        - "&7ID nội bộ — trùng nhau = cùng kho vé"
+        - ""
+        - "&7&o(( Click để đổi TYPE ))"
+      Slot: [16]
+      ClickType: EditType
+
+    editdisplay:
+      ID: OAK_SIGN
+      Name: "&a&lTÊN HIỂN THỊ (DISPLAY)"
+      Lore:
+        - ""
+        - "&fDisplay: &e<display>"
+        - ""
+        - "&7Tên đẹp trên GUI; &eTYPE &7vẫn là id vé"
+        - "&7Chat &eclear &7hoặc &e- &7để xoá (dùng lại TYPE)"
+        - ""
+        - "&7&o(( Click để đặt DISPLAY ))"
+      Slot: [42]
+      ClickType: EditDisplay
+
+    editmob1:
+      ID: GRAY_DYE
+      Name: "&e&lQUÁI CỦA ẢI &c&l1"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob1>"
+      Slot: [28]
+      Edited:
+        ID: LIME_DYE
+        Name: "&e&lQUÁI CỦA ẢI &c&l1"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob1>"
+      ClickType: EditMob1
+
+    editmob2:
+      ID: GRAY_DYE
+      Amount: 2
+      Name: "&e&lQUÁI CỦA ẢI &c&l2"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob2>"
+      Slot: [29]
+      Edited:
+        ID: LIME_DYE
+        Amount: 2
+        Name: "&e&lQUÁI CỦA ẢI &c&l2"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob2>"
+      ClickType: EditMob2
+
+    editmob3:
+      ID: GRAY_DYE
+      Amount: 3
+      Name: "&e&lQUÁI CỦA ẢI &c&l3"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob3>"
+      Slot: [30]
+      Edited:
+        ID: LIME_DYE
+        Amount: 3
+        Name: "&e&lQUÁI CỦA ẢI &c&l3"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob3>"
+      ClickType: EditMob3
+
+    editmob4:
+      ID: GRAY_DYE
+      Amount: 4
+      Name: "&e&lQUÁI CỦA ẢI &c&l4"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob4>"
+      Slot: [31]
+      Edited:
+        ID: LIME_DYE
+        Amount: 4
+        Name: "&e&lQUÁI CỦA ẢI &c&l4"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob4>"
+      ClickType: EditMob4
+
+    editmob5:
+      ID: GRAY_DYE
+      Amount: 5
+      Name: "&e&lQUÁI CỦA ẢI &c&l5"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob5>"
+      Slot: [32]
+      Edited:
+        ID: LIME_DYE
+        Amount: 5
+        Name: "&e&lQUÁI CỦA ẢI &c&l5"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob5>"
+      ClickType: EditMob5
+
+    editmob6:
+      ID: GRAY_DYE
+      Amount: 6
+      Name: "&e&lQUÁI CỦA ẢI &c&l6"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob6>"
+      Slot: [37]
+      Edited:
+        ID: LIME_DYE
+        Amount: 6
+        Name: "&e&lQUÁI CỦA ẢI &c&l6"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob6>"
+      ClickType: EditMob6
+
+    editmob7:
+      ID: GRAY_DYE
+      Amount: 7
+      Name: "&e&lQUÁI CỦA ẢI &c&l7"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob7>"
+      Slot: [38]
+      Edited:
+        ID: LIME_DYE
+        Amount: 7
+        Name: "&e&lQUÁI CỦA ẢI &c&l7"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob7>"
+      ClickType: EditMob7
+
+    editmob8:
+      ID: GRAY_DYE
+      Amount: 8
+      Name: "&e&lQUÁI CỦA ẢI &c&l8"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob8>"
+      Slot: [39]
+      Edited:
+        ID: LIME_DYE
+        Amount: 8
+        Name: "&e&lQUÁI CỦA ẢI &c&l8"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob8>"
+      ClickType: EditMob8
+
+    editmob9:
+      ID: GRAY_DYE
+      Amount: 9
+      Name: "&e&lQUÁI CỦA ẢI &c&l9"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob9>"
+      Slot: [40]
+      Edited:
+        ID: LIME_DYE
+        Amount: 9
+        Name: "&e&lQUÁI CỦA ẢI &c&l9"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob9>"
+      ClickType: EditMob9
+
+    editmob10:
+      ID: GRAY_DYE
+      Amount: 10
+      Name: "&e&lQUÁI CỦA ẢI &c&l10"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Mobs ))"
+        - ""
+        - "&fQuái đã thêm:"
+        - "<mob10>"
+      Slot: [41]
+      Edited:
+        ID: LIME_DYE
+        Amount: 10
+        Name: "&e&lQUÁI CỦA ẢI &c&l10"
+        Lore:
+          - "&7&o(( Click vào để thiết lập ))"
+          - "&7&o(( Chuột-Phải để xoá Mobs ))"
+          - ""
+          - "&fQuái đã thêm:"
+          - "<mob10>"
+      ClickType: EditMob10
+
+    editboss:
+      ID: ZOMBIE_SPAWN_EGG
+      Name: "&c&lBOSS PHÓ BẢN"
+      Lore:
+        - "&7&o(( Click vào để thiết lập ))"
+        - "&7&o(( Chuột-Phải để xoá Boss ))"
+        - ""
+        - "&fBOSS đã được thêm:"
+        - " &7- &fx<boss_amount> &e<boss_type>"
+      Slot: [34]
+      ClickType: EditBoss
+
+    deleteroom:
+      ID: RED_WOOL
+      Name: "&8[&c&l✘&8] &cXóa phòng chơi này"
+      Lore: []
+      Slot: [45]
+      ClickType: DeleteRoom
+
+    confirm:
+      ID: LIME_WOOL
+      Name: "&8[&a&l✔&8] &aHoàn tất chỉnh sửa"
+      Lore: []
+      Slot: [53]
+      ClickType: Confirm
+
+
+# -----------------------------------------------
+#  Reward GUI - Giao diện chỉnh phần thưởng
+# -----------------------------------------------
+RewardGui:
+  Title: "&lChỉnh Phần Thưởng | <name>"
+  Rows: 5
+
+  RewardSlot: [10,11,12,13,14,15,16,19,20,21,22,23,24,25]
+  Format:
+    - "&7Chance hiện tại: &a&l<chance>%"
+    - ""
+    - "&eLeft-Click: &fđể chỉnh &8/ &eRight-Click: &fđể xóa"
+  Content:
+    none:
+      ID: BLACK_STAINED_GLASS_PANE
+      Name: "&r"
+      Slot: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,28,29,30,31,32,33,34,35,36,37,38,42,43,44]
+    rewardamount:
+      ID: PAPER
+      Name: "&a&lGIỚI HẠN PHẦN THƯỞNG"
+      Lore:
+        - "&7&o(( Click vào đây để tùy chỉnh ))"
+        - ""
+        - "&fSố món tối đa: &e<reward_amount>"
+        - ""
+        - "&7&oĐây là giới hạn số món đồ mà mỗi"
+        - "&7&ongười chơi sẽ nhận khi xong phó bản"
+      Slot: [39]
+      ClickType: RewardAmount
+    rewardcommand:
+      ID: PAPER
+      Name: "&a&lNHẬP THƯỞNG BẰNG LỆNH"
+      Lore:
+        - "&7&o(( Click vào đây để tùy chỉnh ))"
+        - ""
+        - "&7&oThêm phần thưởng dưới dạng câu lệnh"
+      Slot: [40]
+      ClickType: RewardCommand
+    confirm:
+      ID: LIME_WOOL
+      Name: "&8[&a&l✔&8] &aHoàn tất chỉnh sửa"
+      Lore: []
+      Slot: [41]
+      ClickType: Confirm
+
+
+# -----------------------------------------------
+#  PhoBan GUI - Giao diện chọn phòng phó bản
+# -----------------------------------------------
+PhoBanGui:
+  Title: "&lChọn Phó Bản"
+  Rows: 5
+
+  PlayerFormat: "&7 - &6<player>"
+
+  RoomSlot: [10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34]
+
+  Blank:
+    ID: BLACK_STAINED_GLASS_PANE
+    Name: "&r"
+    Slot: [-1]
+
+  NextPage:
+    ID: ARROW
+    Name: "&6&lTrang Tiếp &e▸"
+    Slot: [41]
+  PreviousPage:
+    ID: ARROW
+    Name: "&e◂ &6&lTrang Trước"
+    Slot: [39]
+
+  WaitingRoom:
+    ID: LIME_CONCRETE
+    Name: "&f&lTHAM GIA: &r<prefix>"
+    Lore:
+      - "&7&m                                   "
+      - "&7Loại: &e<display> &8| &7vé: &8<type>"
+      - "&7Người chơi: &e<current>/<max> &fplayers"
+      - "<players>"
+      - ""
+      - "&7Thời gian: &a<time>"
+      - ""
+      - "&7Trạng thái: &a<status>"
+      - ""
+      - "&c&l⚠ &7Khi chết sẽ bị trừ điểm nên"
+      - "&7hãy cẩn thận khi chiến đấu nhé!"
+      - "&7&m                                   "
+
+  StartingRoom:
+    ID: YELLOW_CONCRETE
+    Name: "&f&lTHAM GIA: &r<prefix>"
+    Lore:
+      - "&7&m                                   "
+      - "&7Loại: &e<display> &8| &7vé: &8<type>"
+      - "&7Người chơi: &e<current>/<max> &fplayers"
+      - "<players>"
+      - ""
+      - "&7Thời gian: &a<time>"
+      - ""
+      - "&7Trạng thái: &a<status>"
+      - ""
+      - "&c&l⚠ &7Khi chết sẽ bị trừ điểm nên"
+      - "&7hãy cẩn thận khi chiến đấu nhé!"
+      - "&7&m                                   "
+
+  PlayingRoom:
+    ID: RED_CONCRETE
+    Name: "&f&lTHAM GIA: &r<prefix>"
+    Lore:
+      - "&7&m                                   "
+      - "&7Loại: &e<display> &8| &7vé: &8<type>"
+      - "&7Người chơi: &e<current>/<max> &fplayers"
+      - "<players>"
+      - ""
+      - "&7Thời gian: &a<time>"
+      - ""
+      - "&7Trạng thái: &a<status>"
+      - ""
+      - "&c&l⚠ &7Khi chết sẽ bị trừ điểm nên"
+      - "&7hãy cẩn thận khi chiến đấu nhé!"
+      - "&7&m                                   "
+
+  StatusFormat:
+    WAITING: "&a&lCHƯA BẮT ĐẦU"
+    STARTING: "&6&lĐANG CHUẨN BỊ"
+    PLAYING: "&c&lĐÃ BẮT ĐẦU"
+
+  TimeFormat:
+    Minute: "<minute> phút"
+    Second: "<second> giây"
+
+
+# -----------------------------------------------
+#  ChooseType GUI - Giao diện chọn loại phó bản
+# -----------------------------------------------
+ChooseTypeGui:
+  Title: "&lChọn Phó Bản"
+  Rows: 5
+
+  TypeSlot: [10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34]
+
+  Blank:
+    ID: BLACK_STAINED_GLASS_PANE
+    Name: "&r"
+    Slot: [-1]
+
+  NextPage:
+    ID: ARROW
+    Name: "&6&lTrang Tiếp &e▸"
+    Slot: [41]
+  PreviousPage:
+    ID: ARROW
+    Name: "&e◂ &6&lTrang Trước"
+    Slot: [39]
+
+  TypeFormat:
+    ID: SLIME_BALL
+    Name: "&f&lPHÓ BẢN: &e&l<display>"
+    Lore:
+      - ""
+      - " &7ID vé (Type): &8<type>"
+      - " &7Trạng thái: <status>"
+      - ""
+      - " &e▸ &f&nTHÔNG TIN PHÓ BẢN"
+      - ""
+      - " &7Số lượng ải: &e3"
+      - " &7Mức độ đánh giá: &a&lDỄ ẸC"
+      - ""
+      - " &e▸ &f&nPHẦN THƯỞNG"
+      - ""
+      - " &7- &ax64 &fviên kim cương"
+      - "    &7&o(có thể tùy chỉnh)"
+      - ""
+      - "&e&o(( Click vào để chọn phòng ))"
+
+  Format:
+    NoTurn: "&c&l✘ HẾT LƯỢT"
+    Join: "&a&l✔ CÒN LƯỢT"

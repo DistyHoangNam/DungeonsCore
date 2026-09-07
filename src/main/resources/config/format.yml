@@ -1,0 +1,37 @@
+# ============================================================
+#  DungeonsCore - Format Configuration
+#  Cấu hình format hiển thị thông tin phó bản (action bar / HUD)
+# ============================================================
+
+# Format thông tin đợt quái hiển thị trong game
+format:
+  - "&f"
+  - "<#00F5FF>&lᴅᴜɴɢᴇᴏɴ <#FFFFFF>&lᴄᴏʀᴇ"
+  - "<#6B7280>ảɪ: <#34D399><stage> <#374151>/ <#6B7280>đợᴛ: <#FBBF24><turn>"
+  - "<#6B7280>ǫᴜáɪ:"
+  - "<#111827>▪ &r<display> <#FBBF24>x<amount>"
+  - "<#6B7280>ᴘʀᴏɢʀᴇss: <#374151>[<progress><#374151>] <#00F5FF><percent>%"
+  - "&f"
+
+# Thanh tiến trình
+progress:
+  char: "▬"
+  max-char: 10
+  active: "<#34D399>&l"
+  inactive: "<#374151>&l"
+
+# Format khi hoàn thành phó bản
+format-complete:
+  - "&f"
+  - "<#34D399>&l      ᴄʜɪɴʜ ᴘʜụᴄ ᴛʜàɴʜ ᴄôɴɢ"
+  - "<#E5E7EB>      Cánh cổng đã sụp, chiến lợi phẩm thuộc về đội bạn."
+  - "&f"
+  - "<#FBBF24>        &nʙảɴɢ ᴠɪɴʜ ᴅᴀɴʜ ᴛʀậɴ ᴄʜɪếɴ"
+  - "<statistic>"
+  - "&f"
+
+# Format thống kê từng người chơi
+statistic: |-
+  &f
+  <#FBBF24>&l#<stt>  <#34D399><player>
+  <#6B7280>ᴍᴏʙ: <#FFFFFF><killed> <#374151>| <#6B7280>ᴅᴍɢ: <#FF5555><damage>

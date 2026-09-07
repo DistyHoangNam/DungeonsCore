@@ -1,0 +1,79 @@
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version '8.3.5'
+    id("xyz.jpenilla.run-paper") version "2.3.1"
+}
+
+group = 'camchua.phoban'
+version = '1.4.6'
+
+// JVM: bytecode 17 for the whole artifact. Plugin targets Minecraft 1.21.1+.
+subprojects {
+    repositories {
+        mavenCentral()
+        maven { url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+    maven { url = "https://oss.sonatype.org/content/groups/public/" }
+    maven { url = "https://repo.extendedclip.com/content/repositories/placeholderapi/" }
+    maven { url = "https://jitpack.io" }
+    maven { url = "https://mvn.lumine.io/repository/maven-public/" }
+    maven { url = "https://repo.papermc.io/repository/maven-public/" }
+    maven { url = "https://maven.enginehub.org/repo/" }
+}
+
+dependencies {
+    implementation project(':compat-api')
+    implementation project(':compat-modern')
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'], exclude: ['MythicMobs-*.jar'])
+    compileOnly files('libs/MythicMobs-5.12.0.jar')
+    // Compile against the minimum supported modern API.
+    compileOnly("org.spigotmc:spigot-api:1.21.1-R0.1-SNAPSHOT")
+    compileOnly("me.clip:placeholderapi:2.11.6")
+    compileOnly("net.luckperms:api:5.4")
+    implementation(platform("com.intellectualsites.bom:bom-newest:1.55"))
+    implementation("com.googlecode.json-simple:json-simple:1.1.1")
+}
+
+shadowJar {
+    archiveClassifier.set('')
+    relocate 'org.json.simple', 'camchua.phoban.libs.json.simple'
+}
+
+tasks.build.dependsOn shadowJar
+
+tasks {
+    runServer {
+        minecraftVersion("1.21.1")
+    }
+}
+
+def targetJavaVersion = 17
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release.set(targetJavaVersion)
+    }
+}
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}

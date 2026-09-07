@@ -1,0 +1,29 @@
+name: DungeonsCore
+version: '${version}'
+main: camchua.phoban.phobanpro.DungeonsCore
+api-version: '1.21'
+description: Hệ thống Phó Bản (Dungeon Instance) cho Minecraft
+author: [DistyHoangNam]
+
+depend: [MythicMobs]
+softdepend: [PlaceholderAPI, ProSkillAPI, SkillAPI, LuckPerms, FastAsyncWorldEdit, MMOItems]
+
+commands:
+  phobanpro:
+    description: Lệnh chính của plugin DungeonsCore
+    usage: /<command> [subcommand]
+    aliases: [phoban, pbpro, pbpc]
+  phoban:
+    description: Lệnh phó bản
+    usage: /<command> [subcommand]
+
+permissions:
+  phoban.admin:
+    description: Quyền quản trị phó bản (tạo, chỉnh, xóa phòng, reload, ...)
+    default: op
+  phoban.use:
+    description: Quyền mở GUI phó bản (/phoban) và tham gia nhanh bằng lệnh
+    default: false
+  phoban.respawn.*:
+    description: Quyền đặt số lượt hồi sinh tùy chỉnh (phoban.respawn.<số>)
+    default: false
