@@ -17,6 +17,9 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
+
+import java.util.logging.Level;
 
 public class GameListener implements Listener {
 
@@ -50,6 +53,45 @@ public class GameListener implements Listener {
         if (p.getHealth() <= e.getFinalDamage()) {
             DeathHandler.handleDeath(p, () -> e.setCancelled(true));
         }
+    }
+
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    public void onPlayerLethalDamage(EntityDamageEvent e) {
+        if (!(e.getEntity() instanceof Player p)) return;
+        if (!PlayerData.contains(p)) return;
+        if (DeathHandler.isProtected(p)) { e.setCancelled(true); return; }
+
+        if (p.getHealth() <= e.getFinalDamage()) {
+            DeathHandler.handleDeath(p, () -> e.setCancelled(true));
+        }
+    }
+
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    public void onPlayerDeath(PlayerDeathEvent e) {
+        Player p = e.getEntity();
+        if (!PlayerData.contains(p)) return;
+
+        DebugLogger.log("Player death intercepted in dungeon. player=" + p.getName()
+                + ", lastDamageCause=" + (p.getLastDamageCause() != null
+                        ? p.getLastDamageCause().getCause().name() : "null"));
+
+        boolean cancelled = false;
+        try {
+            e.getClass().getMethod("setCancelled", boolean.class).invoke(e, true);
+            cancelled = true;
+        } catch (NoSuchMethodException ex) {
+            DungeonsCore.inst().getLogger().warning(
+                    "PlayerDeathEvent#setCancelled không được hỗ trợ - đã keep inventory. player: " + p.getName());
+        } catch (Throwable t) {
+            DungeonsCore.inst().getLogger().log(Level.WARNING, "Failed to cancel PlayerDeathEvent", t);
+        }
+        if (!cancelled) {
+            e.setKeepLevel(true);
+            e.setKeepInventory(true);
+            e.getDrops().clear();
+        }
+
+        DeathHandler.handleDeath(p, () -> { });
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)

@@ -63,7 +63,7 @@ public final class DeathHandler {
         if (isDuplicateDeath(p)) return;
 
         FileConfiguration cfg = FileManager.getFileConfig(FileManager.Files.CONFIG);
-        if (cfg.getBoolean("Settings.Respawn.Enable")) {
+        if (cfg.getBoolean("Settings.Respawn.Enable", true)) {
             handleRespawn(p, cancelEvent);
         } else {
             handleNoRespawn(p, cancelEvent);

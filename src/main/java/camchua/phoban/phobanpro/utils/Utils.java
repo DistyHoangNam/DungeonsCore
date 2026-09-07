@@ -102,7 +102,7 @@ public class Utils {
         for (int i = 100; i > 0; i--) {
             if (p.hasPermission("phoban.respawn." + i)) return i;
         }
-        return FileManager.getFileConfig(FileManager.Files.CONFIG).getInt("Settings.Respawn.Amount");
+        return FileManager.getFileConfig(FileManager.Files.CONFIG).getInt("Settings.Respawn.Amount", 2);
     }
 
     public static void sendError(String title, String message) {

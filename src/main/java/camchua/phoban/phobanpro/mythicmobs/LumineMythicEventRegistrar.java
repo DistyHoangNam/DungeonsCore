@@ -86,7 +86,10 @@ public final class LumineMythicEventRegistrar {
                 DeathHandler.handleDeath(p, () -> {
                     try {
                         ec.getMethod("setCancelled", boolean.class).invoke(event, true);
-                    } catch (Throwable ignored) {}
+                    } catch (Throwable t) {
+                        DungeonsCore.inst().getLogger().log(Level.FINE,
+                                "Không huỷ được MythicDamageEvent qua reflection (chết riel)", t);
+                    }
                 });
             }
         } catch (Throwable t) {

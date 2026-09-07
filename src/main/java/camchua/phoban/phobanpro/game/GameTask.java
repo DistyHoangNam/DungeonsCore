@@ -138,7 +138,7 @@ public class GameTask implements Runnable {
                 data.finishRespawn();
                 player.setGameMode(GameMode.SURVIVAL);
                 player.sendMessage(Messages.get("Respawn").replace("<amount>", String.valueOf(data.remainRespawn())));
-                if (getConfig().getBoolean("Settings.Checkpoint") && data.hasDeath()) {
+                if (getConfig().getBoolean("Settings.Checkpoint", true) && data.hasDeath()) {
                     player.teleport(data.getLastDeath());
                 } else {
                     player.teleport(game.mobLocation(0));
